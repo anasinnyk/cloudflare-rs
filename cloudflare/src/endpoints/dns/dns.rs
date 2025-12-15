@@ -30,6 +30,30 @@ impl EndpointSpec for ListDnsRecords<'_> {
     }
 }
 
+/// Get DNS Record
+/// <https://developers.cloudflare.com/api/resources/dns/subresources/records/methods/get/>
+#[derive(Debug)]
+pub struct GetDnsRecord<'a> {
+    pub zone_identifier: &'a str,
+    pub identifier: &'a str,
+}
+
+impl EndpointSpec for GetDnsRecord<'_> {
+    type JsonResponse = DnsRecord;
+    type ResponseType = ApiSuccess<Self::JsonResponse>;
+
+    fn method(&self) -> Method {
+        Method::GET
+    }
+
+    fn path(&self) -> String {
+        format!(
+            "zones/{}/dns_records/{}",
+            self.zone_identifier, self.identifier
+        )
+    }
+}
+
 /// Create DNS Record
 /// <https://api.cloudflare.com/#dns-records-for-a-zone-create-dns-record>
 #[derive(Debug)]

@@ -6,6 +6,26 @@ use crate::framework::OrderDirection;
 use crate::framework::response::ApiSuccess;
 use serde::Serialize;
 
+/// Get Account
+/// <https://developers.cloudflare.com/api/resources/accounts/methods/get/>
+#[derive(Debug)]
+pub struct GetAccountParams<'a> {
+    pub identifier: &'a str,
+}
+
+impl EndpointSpec for GetAccountParams<'_> {
+    type JsonResponse = Account;
+    type ResponseType = ApiSuccess<Self::JsonResponse>;
+
+    fn method(&self) -> Method {
+        Method::GET
+    }
+
+    fn path(&self) -> String {
+        format!("accounts/{}", self.identifier)
+    }
+}
+
 /// List Accounts
 /// List all accounts you have ownership or verified access to
 /// <https://api.cloudflare.com/#accounts-list-accounts>
