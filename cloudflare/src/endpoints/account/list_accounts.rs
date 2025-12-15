@@ -9,11 +9,11 @@ use serde::Serialize;
 /// Get Account
 /// <https://developers.cloudflare.com/api/resources/accounts/methods/get/>
 #[derive(Debug)]
-pub struct GetAccountParams<'a> {
+pub struct GetAccount<'a> {
     pub identifier: &'a str,
 }
 
-impl EndpointSpec for GetAccountParams<'_> {
+impl EndpointSpec for GetAccount<'_> {
     type JsonResponse = Account;
     type ResponseType = ApiSuccess<Self::JsonResponse>;
 
