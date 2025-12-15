@@ -2,8 +2,10 @@ use crate::framework::response::ApiResult;
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
+pub mod get_account;
 pub mod list_accounts;
 pub mod user;
+pub use get_account::GetAccount;
 pub use list_accounts::ListAccounts;
 
 /// Cloudflare Accounts
