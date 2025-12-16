@@ -56,7 +56,7 @@ pub struct CreateZone<'a> {
     pub params: CreateZoneParams<'a>,
 }
 impl EndpointSpec for CreateZone<'_> {
-    type JsonResponse = ();
+    type JsonResponse = Zone;
     type ResponseType = ApiSuccess<Self::JsonResponse>;
 
     fn method(&self) -> Method {
