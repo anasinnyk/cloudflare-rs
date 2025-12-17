@@ -2,7 +2,6 @@ use crate::endpoints::page_rule::types::PageRule;
 use crate::framework::endpoint::{EndpointSpec, Method};
 use crate::framework::response::ApiSuccess;
 
-/// List Page Rules
 #[derive(Debug)]
 pub struct ListPageRules<'a> {
     pub zone_identifier: &'a str,

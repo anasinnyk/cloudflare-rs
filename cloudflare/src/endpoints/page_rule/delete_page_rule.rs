@@ -8,7 +8,6 @@ pub struct DeletePageRuleResult {
     pub id: String,
 }
 
-/// Delete a Page Rule
 #[derive(Debug)]
 pub struct DeletePageRule<'a> {
     pub zone_identifier: &'a str,

@@ -3,7 +3,6 @@ use crate::endpoints::page_rule::types::PageRule;
 use crate::framework::endpoint::{EndpointSpec, Method, RequestBody};
 use crate::framework::response::ApiSuccess;
 
-/// Get a Page Rule
 #[derive(Debug)]
 pub struct GetPageRule<'a> {
     pub zone_identifier: &'a str,

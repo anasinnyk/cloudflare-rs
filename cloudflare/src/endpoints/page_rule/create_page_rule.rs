@@ -5,7 +5,6 @@ use crate::framework::endpoint::{EndpointSpec, Method, RequestBody};
 use crate::framework::response::ApiSuccess;
 use serde::{Deserialize, Serialize};
 
-/// Create a Page Rule
 #[derive(Debug)]
 pub struct CreatePageRule<'a> {
     pub zone_identifier: &'a str,

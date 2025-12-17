@@ -16,7 +16,7 @@ pub struct UpdatePageRuleParams {
     #[serde(skip_serializing_if = "Option::is_none")]
     pub status: Option<PageRuleStatus>,
 }
-/// Update a Page Rule
+
 #[derive(Debug)]
 pub struct UpdatePageRule<'a> {
     pub zone_identifier: &'a str,

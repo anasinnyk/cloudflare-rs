@@ -29,8 +29,6 @@ pub enum PageRuleStatus {
     Disabled,
 }
 
-// Response types
-
 #[derive(Deserialize, Serialize, Debug, Clone)]
 pub struct PageRule {
     pub id: String,
