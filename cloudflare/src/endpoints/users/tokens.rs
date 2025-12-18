@@ -15,6 +15,6 @@ impl EndpointSpec for TokenVerification {
         Method::GET
     }
     fn path(&self) -> String {
-        "users/tokens/verify".to_string()
+        "user/tokens/verify".to_string()
     }
 }
