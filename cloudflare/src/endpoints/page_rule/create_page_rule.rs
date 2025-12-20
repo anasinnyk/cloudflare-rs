@@ -1,5 +1,5 @@
 use crate::endpoints::page_rule::types::{
-    PageRule, PageRuleAction, PageRuleStatus, PageRuleTarget,
+    PageRuleAction, PageRuleResponse, PageRuleStatus, PageRuleTarget,
 };
 use crate::framework::endpoint::{EndpointSpec, Method, RequestBody};
 use crate::framework::response::ApiSuccess;
@@ -12,7 +12,7 @@ pub struct CreatePageRule<'a> {
 }
 
 impl EndpointSpec for CreatePageRule<'_> {
-    type JsonResponse = PageRule;
+    type JsonResponse = PageRuleResponse;
     type ResponseType = ApiSuccess<Self::JsonResponse>;
 
     fn method(&self) -> Method {
