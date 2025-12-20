@@ -30,23 +30,17 @@ pub enum PageRuleStatus {
 }
 
 #[derive(Deserialize, Serialize, Debug, Clone)]
-pub struct PageRuleRequest {
-    pub actions: Vec<PageRuleAction>,
-    pub targets: Vec<PageRuleTarget>,
-    pub priority: i64,
-    pub status: PageRuleStatus,
-}
-
-#[derive(Deserialize, Serialize, Debug, Clone)]
-pub struct PageRuleResponse {
+pub struct PageRule {
     pub id: String,
     pub actions: Vec<PageRuleAction>,
     pub targets: Vec<PageRuleTarget>,
     pub priority: i64,
     pub status: PageRuleStatus,
-    pub created_on: String,
-    pub modified_on: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub created_on: Option<String>,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub modified_on: Option<String>,
 }
 
-impl ApiResult for PageRuleResponse {}
-impl ApiResult for Vec<PageRuleResponse> {}
+impl ApiResult for PageRule {}
+impl ApiResult for Vec<PageRule> {}
